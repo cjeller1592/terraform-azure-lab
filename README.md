@@ -6,8 +6,11 @@ This is a simple cybersecurity lab in Azure using Terraform — a virtual networ
 
 All you need is [Terraform](https://www.terraform.io/downloads.html), an Azure account, and the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) (learn about authenticating into Azure to use Terraform [here](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/azure_cli#logging-into-the-azure-cli))
 
-To give it a shot, run the script — that will create the lab and automatically log you into the Kali box (you'll need to give your local password for the sudo chmod command and click "yes" for the RSA fingerprint to SSH into the Kali box)
+To give it a shot, run the script:
 
 ```
 ./lab.sh
 ```
+This script will create the lab and automatically log you into the Kali box .(you'll need to give your local password for the sudo chmod command and then you'll have to click "yes" for the RSA fingerprint to SSH into the Kali box)
+
+Then when you're done with the lab and want to blow it up, just run `terraform destroy` in the repo!
