@@ -8,7 +8,7 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "group" {
   name                  = "lab1"
-  location              = "eastus2"
+  location              = var.location
 }
 
 # After the resource group is the virtual network...the vm should exist within a private network
@@ -134,8 +134,8 @@ resource "azurerm_linux_virtual_machine" "other-box" {
   resource_group_name = azurerm_resource_group.group.name
   location            = azurerm_resource_group.group.location
   size                = "Standard_F2"
-  admin_username      = "yourname"
-  admin_password      = "Makethiswhateveryouwant!23"
+  admin_username      = var.target_user
+  admin_password      = var.target_pw
   disable_password_authentication = false
   network_interface_ids = [
     azurerm_network_interface.targetnic.id,
